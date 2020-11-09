@@ -1,0 +1,13 @@
+<ion-grid>
+
+  <ion-row fixed>
+
+    <ion-col size="12" size-lg="3" size-md="4" size-sm="6" size-xs="12" *ngFor="let sobre of sobres">
+
+      <app-sobre [sobre]="sobre" (sobreBorrado)= "procesaSobre($event)"></app-sobre>
+
+    </ion-col>
+
+  </ion-row>
+
+</ion-grid>

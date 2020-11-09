@@ -1,0 +1,38 @@
+<div class="evento">
+
+  <ion-item lines="none" [routerLink]="['/evento', evento._id, evento.created, evento.nombre, evento.pregunta]" detail> 
+
+    <ion-avatar slot="start">
+      <img src="/assets/avatars/{{ evento.usuario.avatar }}">
+    </ion-avatar>
+
+    <ion-label>
+      <ion-text color="primary">
+        <h1>  {{evento.nombre}} </h1>
+      </ion-text>
+      <ion-text color="secondary">
+        <p> {{evento.created}}  </p>
+      </ion-text>
+    </ion-label>
+
+  </ion-item>
+
+  <ion-item lines="none" class="ion-text-wrap">
+    <ion-text color="tertiary">
+    <h5>{{evento.pregunta}} </h5>
+  </ion-text>
+  </ion-item>
+
+  <!-- Borrar Evento -->
+  <ion-item lines="none" class="ion-text-wrap">
+    
+    <ion-button color="danger" slot="end" expand="block" shape="round"  (click)="borrarEvento()"> 
+      <ion-icon name="trash-outline"></ion-icon>
+    </ion-button>
+
+  </ion-item>
+
+
+
+</div>
+

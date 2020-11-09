@@ -1,0 +1,43 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="end">
+      <ion-menu-button color="light" menu="primerMenu"></ion-menu-button>
+  </ion-buttons>
+    <ion-title>Interacciones</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text="Regresar" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card mode="ios" class="card-full"> 
+
+    <img src="/assets/slides/interaccion.png" class="card-image" />
+  
+    <ion-card-header>
+  
+        <ion-card-subtitle>Interacciones</ion-card-subtitle> <br>
+  
+    </ion-card-header>
+  
+    <ion-card-content>
+  
+      <ion-list id="export">
+  
+          <ion-item *ngFor="let instancia of votosSolidos">
+      
+              <ion-label>{{instancia.from}}</ion-label>
+              <ion-label><ion-icon name="arrow-forward-sharp" color="tertiary"></ion-icon></ion-label>
+              <ion-label>{{instancia.to}}</ion-label>
+  
+          </ion-item>
+  
+      </ion-list>
+    
+    </ion-card-content>
+  
+  </ion-card>
+
+</ion-content>

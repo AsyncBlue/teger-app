@@ -1,0 +1,61 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="end">
+      <ion-menu-button
+        color="light"
+        menu="primerMenu"
+      ></ion-menu-button>
+    </ion-buttons>
+
+    <ion-buttons slot="start">
+      <ion-back-button
+        text="Regresar"
+        defaultHref="/"
+      ></ion-back-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center">Datos Del Evento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-button
+    color="tertiary"
+    expand="block"
+    shape="round"
+    fill="outline"
+    (click)="enviarCorreo()"
+  >
+    <ion-icon
+      name="mail-open-outline"
+      slot="start"
+      size="large"
+    ></ion-icon>
+
+    Enviar Votaciones
+  </ion-button>
+
+  <ion-list>
+    <ion-list-header>
+      <ion-text color="tertiary">
+        <h1>Votaciones</h1>
+      </ion-text>
+    </ion-list-header>
+
+    <ion-item *ngFor="let registro of dataVotaciones.guardados">
+      <ion-icon
+        name="qr-code-outline"
+        slot="start"
+        color="tertiary"
+      ></ion-icon>
+
+      <ion-label>
+        <h2>{{ registro.text }}</h2>
+
+        <p>
+          {{ registro.created | date: 'medium' }}
+        </p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

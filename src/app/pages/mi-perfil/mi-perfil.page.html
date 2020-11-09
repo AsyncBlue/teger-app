@@ -1,0 +1,144 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button text="Regresar" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()"
+                  color="danger">
+        <ion-icon slot="icon-only" name="exit"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Mis Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-text-center">
+
+  <br><br>
+
+  <ion-card  mode="ios">
+
+      <img src="assets/avatars/{{usuario.avatar}}" class="slide-image">
+
+      <ion-card-header>
+        <ion-card-subtitle> {{ usuario.email }}</ion-card-subtitle>
+        <ion-card-title class="capitalize"> {{ usuario.nombre }} {{ usuario.apellido }}</ion-card-title>
+      </ion-card-header>
+ 
+  </ion-card>
+
+  <ion-row class="top-20">
+    <ion-col size="12" text-center>
+      <ion-label color="secondary">
+        <h1>Actualizar Perfil</h1>
+      </ion-label>
+    </ion-col>
+  </ion-row>
+
+
+  <app-avatar-selector (avatarSel)="usuario.avatar = $event" [avatarActual]="usuario.avatar"></app-avatar-selector>
+
+  <form (ngSubmit)="actualizar( fActualizar )" #fActualizar>
+      <ion-row>
+        <ion-col>
+          
+            <ion-list>
+              
+              <ion-item>
+                <ion-label position="floating" color="tertiary">Email</ion-label>
+                <ion-input name="email"
+                           type="email"
+                           [(ngModel)]="usuario.email"
+                           required></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="floating" color="tertiary">Nombre</ion-label>
+                <ion-input name="nombre"
+                           type="text"
+                           [(ngModel)]="usuario.nombre"
+                           required></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="floating" color="tertiary">Apellido</ion-label>
+                <ion-input name="apellido"
+                           type="text"
+                           [(ngModel)]="usuario.apellido"
+                           required></ion-input>
+              </ion-item>
+
+
+            </ion-list>
+        </ion-col>
+      </ion-row>
+      
+      <ion-row>
+        <ion-col text-center>
+          <ion-button type="submit"
+                      color="tertiary"
+                      shape="round"
+                      size="small">
+          Actualizar Datos
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    
+  </form>
+
+  <br>
+
+  <!-- ACTUALIZAR PASS -->
+
+  <ion-row class="top-20">
+    <ion-col size="12" text-center>
+      <ion-label color="secondary">
+        <h1>Actualizar Contraseña</h1>
+      </ion-label>
+    </ion-col>
+  </ion-row>
+
+  <form (ngSubmit)="actualizarPass( fActualizarPass )" #fActualizarPass>
+    <ion-row>
+      <ion-col>
+        
+          <ion-list>
+            
+            <ion-item>
+              <ion-label position="floating" color="tertiary">Nueva Contraseña</ion-label>
+              <ion-input name="pass1"
+                         type="password"
+                         [(ngModel)]="newPass.pass1"
+                         required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="floating" color="tertiary">Repita la Nueva Contraseña</ion-label>
+              <ion-input name="pass2"
+                         type="password"
+                         [(ngModel)]="newPass.pass2"
+                         required></ion-input>
+            </ion-item>
+
+          </ion-list>
+      </ion-col>
+    </ion-row>
+    
+    <ion-row>
+      <ion-col text-center>
+        <ion-button type="submit"
+                    color="tertiary"
+                    shape="round"
+                    size="small"
+                    [disabled]="newPass.pass1.length < 1">
+        Actualizar Contraseña
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  
+</form>
+
+
+
+</ion-content>

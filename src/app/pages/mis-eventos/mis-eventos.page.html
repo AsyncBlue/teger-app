@@ -1,0 +1,21 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="end">
+      <ion-menu-button color="light" menu="primerMenu"></ion-menu-button>
+  </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-back-button text="Regresar" routerLink="/inicio"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Mis Tejidos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+
+  <!-- eventos -->
+  <app-eventos [eventos]="eventos"></app-eventos>
+
+</ion-content>
+
+

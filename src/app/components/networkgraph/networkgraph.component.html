@@ -1,0 +1,23 @@
+<ion-button
+  expand="full"
+  shape="block"
+  size="default"
+  color="secondary"
+  (click)="updateChart()"
+>Tejer la Red</ion-button>
+
+<div class="boxChart__container">
+  <div>
+    <highcharts-chart
+      id="container"
+      [Highcharts]="Highcharts"
+      [constructorType]="chartConstructor"
+      [options]="chartOptions"
+      [callbackFunction]="chartCallback"
+      [(update)]="updateFlag"
+      [oneToOne]="true"
+      [runOutsideAngular]="true"
+      style="width: 100%; height: 400px; display: block;"
+    ></highcharts-chart>
+  </div>
+</div>

@@ -1,0 +1,71 @@
+<div class="sobre">
+  <ion-item lines="none">
+    <ion-icon
+      class="icono"
+      slot="start"
+      color="tertiary"
+      name="mail-sharp"
+    ></ion-icon>
+
+    <ion-label>
+      <ion-text
+        class="ion-text-center"
+        color="tertiary"
+      >
+        <h1>{{ sobre.target }}</h1>
+      </ion-text>
+    </ion-label>
+
+    <ion-icon
+      class="icono"
+      slot="end"
+      color="warning"
+      name="ribbon-sharp"
+    ></ion-icon>
+  </ion-item>
+
+  <ion-item lines="none">
+    <ion-label>
+      <ion-text
+        class="ion-text-start"
+        color="primary"
+      >
+        <h1>Votantes:</h1>
+      </ion-text>
+    </ion-label>
+  </ion-item>
+
+  <ion-item *ngFor="let voto of sobre.source">
+    <ion-icon
+      slot="start"
+      color="success"
+      name="person-sharp"
+    ></ion-icon>
+
+    <ion-label>
+      <ion-text
+        class="ion-text-center"
+        color="tertiary"
+      >
+        <h2>{{ voto }}</h2>
+      </ion-text>
+    </ion-label>
+  </ion-item>
+
+  <!-- Borrar Sobre -->
+
+  <ion-item
+    lines="none"
+    class="ion-text-wrap"
+  >
+    <ion-button
+      color="danger"
+      slot="end"
+      expand="block"
+      shape="round"
+      (click)="borrarSobre()"
+    >
+      <ion-icon name="trash-outline"></ion-icon>
+    </ion-button>
+  </ion-item>
+</div>

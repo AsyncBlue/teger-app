@@ -1,0 +1,50 @@
+ion-card {
+    overflow: unset !important;
+	color: purple;
+	max-height: 100%;
+  	display: flex;
+  	flex-direction: column;
+}
+
+ion-card {
+    /* height: 205px; */
+    width: 330px;
+    margin: auto;
+    margin-top: 60%;
+}
+
+ion-card-header {
+    position: relative;
+    top: -35px;
+    text-align: center;
+}
+
+ion-card-content {
+    position: relative;
+    top: -50px;
+    text-align: center;
+}
+
+.card-full {
+    margin-top: 20%;
+}
+
+.card-image {
+    width: 130px;
+    text-align: center;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    position: relative;
+    top: -40px;
+}
+
+ion-list {
+	overflow: hidden;
+	overflow-y: auto;
+	::-webkit-scrollbar {
+	  display: none;
+	}
+  }

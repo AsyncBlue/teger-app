@@ -1,0 +1,80 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="end">
+      <ion-menu-button color="light" menu="primerMenu"></ion-menu-button>
+  </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-back-button text="Regresar" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+
+
+<ion-card  mode="ios">
+
+  <ion-card-header>
+    <ion-card-subtitle> {{ evento.created }}</ion-card-subtitle>
+    <ion-card-title> {{ evento.nombre }} </ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    {{ evento.pregunta }}
+  </ion-card-content>
+
+</ion-card>
+
+  <ion-list>
+
+    <ion-item  (click)="aviso()" detail>
+
+      <ion-icon slot="start" name="qr-code-outline" color="secondary"></ion-icon>    
+
+      <ion-label color="primary">Escanear Nodo</ion-label>
+
+    </ion-item>
+
+    
+    <ion-item (click)="enviarCorreo(this.votosSolidos)" detail>
+
+      <ion-icon slot="start" name="mail-outline" color="secondary"></ion-icon>    
+
+      <ion-label color="primary">Enviar Resultados por Correo</ion-label>
+
+    </ion-item>
+
+    <ion-item [routerLink]="['/compartir', evento._id]" detail>
+
+      <ion-icon slot="start" name="share-social-outline" color="secondary"></ion-icon>    
+
+      <ion-label color="primary">Compartir Tejido</ion-label>
+
+    </ion-item>
+
+    <ion-item [routerLink]="['/interacciones', evento._id]" detail>
+
+      <ion-icon slot="start" name="people-outline" color="secondary"></ion-icon>    
+
+      <ion-label color="primary">Interacciones</ion-label>
+
+    </ion-item>
+
+    <ion-item [routerLink]="['/grafico', evento._id]" detail>
+
+      <ion-icon slot="start" name="globe-outline" color="secondary"></ion-icon>    
+
+      <ion-label color="primary">Grafico de Red</ion-label>
+
+    </ion-item>
+    
+
+</ion-list>
+
+  <!-- SOBRES -->
+
+
+  <app-sobres [sobres]="sobres"></app-sobres>
+
+</ion-content>

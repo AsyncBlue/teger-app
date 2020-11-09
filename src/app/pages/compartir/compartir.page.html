@@ -1,0 +1,36 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="end">
+      <ion-menu-button color="light" menu="primerMenu"></ion-menu-button>
+  </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-back-button text="Regresar" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+   <!--  <ion-title class="ion-text-center">{{evento.nombre}}</ion-title> -->
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+
+    <ion-card mode="ios">
+
+      <img src="/assets/slides/compartir.png" class="card-image" />
+    <ion-card-header>
+      <ion-card-subtitle>Compartir Codigo:</ion-card-subtitle> <br>
+    </ion-card-header>
+  
+    <ion-card-content>
+      
+      <ion-text>
+        {{evento._id}}
+     </ion-text> <br> <br>
+
+      <ion-button expand="full" shape="block" size="default"  color="success" (click)="copyText(evento._id)">Copiar Codigo</ion-button>
+
+    </ion-card-content>
+  </ion-card> 
+ 
+  
+
+</ion-content>

@@ -1,0 +1,28 @@
+[
+    {
+      "icon": "documents-outline",
+      "name": "Mis Tejidos",
+      "redirectTo": "/mis-eventos"
+    },
+    {
+      "icon": "add-circle-outline",
+      "name": "Crear Tejido",
+      "redirectTo": "/crear-evento"
+    },
+    {
+      "icon": "person-add-outline",
+      "name": "Unirse a un Tejido",
+      "redirectTo": "/unirse"
+    },
+    {
+      "icon": "person-outline",
+      "name": "Mi Perfil",
+      "redirectTo": "/mi-perfil"
+    },
+    {
+      "icon": "help-circle-outline",
+      "name": "Como se Utiliza",
+      "redirectTo": "/tutorial"
+    }
+]    
+  

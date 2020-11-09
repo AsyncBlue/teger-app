@@ -1,0 +1,40 @@
+
+ion-card {
+    height: 30% !important;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+ion-card {
+    overflow: unset !important;
+    color: purple;
+}
+
+
+.slide-image {
+    width: 150px;
+    text-align: center;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    position: relative;
+    top: -50px;
+}
+
+ion-card-header {
+    position: relative;
+    top: -50px;
+}
+
+ion-card-content {
+    position: relative;
+    top: -50px;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
